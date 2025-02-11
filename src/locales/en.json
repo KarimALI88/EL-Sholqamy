@@ -1,4 +1,10 @@
 {
-  "welcome": "Welcome to our website",
-  "description": "This is an example of multilingual support"
+  "homeLink": "Home",
+  "aboutLink":"About Us",
+  "contactLink":"Contact Us",
+  "menuLink":"Menu",
+  "galleryLink":"Gallery",
+  "changeLang":"عربي",
+  "bookLink":"Book Table",
+  "headerHomeTitle": "the grand opening for the best grilled restaurant in Egypt"
 }

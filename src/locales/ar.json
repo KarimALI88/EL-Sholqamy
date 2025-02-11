@@ -1,4 +1,10 @@
 {
-  "welcome": "مرحبًا بك في موقعنا",
-  "description": "هذا مثال على دعم اللغات المتعددة"
+  "homeLink": "الصفحة الرئيسية",
+  "aboutLink":"من نحن",
+  "contactLink":"تواصل",
+  "menuLink":"قائمة الطعام",
+  "galleryLink":"المعرض",
+  "changeLang":"English",
+  "bookLink":"حجز ترابيزة",
+  "headerHomeTitle": "افضل مطعم كباب في مصر"
 }
