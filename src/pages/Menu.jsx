@@ -120,7 +120,7 @@ const Menu = () => {
         </button>
       </div>
       {/* display menu based on branch */}
-      <div className="menuSection my-6 px-10 mx-auto w-[70%]">
+      <div className="menuSection my-6 px-10 mx-auto lg:w-[70%] sm:w-full">
         <h4 className="text-xl my-3 font-extrabold">{nearestBranch?.name}</h4>
         <Tabs value="html">
           <TabsHeader>
