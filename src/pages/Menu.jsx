@@ -1,9 +1,10 @@
 import React from 'react'
-
+import MainHeader from '../components/MainHeader'
+import menuBg from "../assets/menuBg.png"
 const Menu = () => {
   return (
     <div>
-      menu
+      <MainHeader title={"menuHeaderTitle"} image={menuBg}/>
     </div>
   )
 }

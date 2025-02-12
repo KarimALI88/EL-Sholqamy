@@ -7,7 +7,6 @@ import MainHeader from "./components/MainHeader";
 function App() {
   return (
     <div className="bigcontainer">
-      <MainHeader />
       <Routes>
         {routes.map((route, index) => (
           <Route key={index} path={route.path} element={route.element} />
