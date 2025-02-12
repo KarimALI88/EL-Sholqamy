@@ -13,7 +13,7 @@ import { useTranslation } from "react-i18next";
 const TopNavBar = () => {
   const [openNav, setOpenNav] = React.useState(false);
   const { t, i18n } = useTranslation();
-  const navigation = useNavigate()
+  const navigation = useNavigate();
 
   // console.log(i18n)
 
@@ -96,7 +96,9 @@ const TopNavBar = () => {
               </Button>
               <Button
                 variant="text"
-                onClick={() => changeLanguage(i18n.language == "ar" ? "en" : "ar")}
+                onClick={() =>
+                  changeLanguage(i18n.language == "ar" ? "en" : "ar")
+                }
                 size="md"
                 className="hidden lg:inline-block bg-transparent border-mainColor text-mainColor border-2 hover:bg-mainColor hover:text-white rounded-none"
               >
@@ -113,7 +115,7 @@ const TopNavBar = () => {
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
-                  className="h-6 w-6"
+                  className="h-6 w-6 text-white"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
                   strokeWidth={2}
@@ -127,7 +129,7 @@ const TopNavBar = () => {
               ) : (
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className="h-6 w-6"
+                  className="h-6 w-6 text-white"
                   fill="none"
                   stroke="currentColor"
                   strokeWidth={2}
@@ -142,21 +144,24 @@ const TopNavBar = () => {
             </IconButton>
           </div>
         </div>
-        <Collapse open={openNav}>
+        <Collapse open={openNav} className="block lg:hidden">
           {navList}
-          <div className="flex items-center gap-x-1">
+          <div className="flex flex-col gap-2 mt-4">
             <Button
               variant="text"
+              onClick={() => navigation("/reservation")}
               size="md"
-              className="hidden lg:inline-block bg-mainColor text-white hover:bg-transparent hover:text-mainColor rounded-none"
+              className="bg-mainColor text-white hover:bg-transparent hover:text-mainColor rounded-none"
             >
               <span>{t("bookLink")}</span>
             </Button>
             <Button
               variant="text"
-              onClick={() => changeLanguage("ar")}
+              onClick={() =>
+                changeLanguage(i18n.language === "ar" ? "en" : "ar")
+              }
               size="md"
-              className="hidden lg:inline-block bg-transparent border-mainColor text-mainColor border-2 hover:bg-mainColor hover:text-white rounded-none"
+              className="bg-transparent border-mainColor text-mainColor border-2 hover:bg-mainColor hover:text-white rounded-none"
             >
               <span>{t("changeLang")}</span>
             </Button>
