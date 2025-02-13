@@ -36,7 +36,7 @@ const Reservation = () => {
       {/* inputs */}
       <div className="px-6 w-full my-5 flex justify-center items-center flex-wrap">
         {/* user name */}
-        <div className="lg:w-2/5 sm:w-80 sm:mx-auto lg:mx-3 my-3">
+        <div className="w-full sm:w-80 lg:w-2/5 sm:mx-auto lg:mx-3 my-3">
           <Typography
             variant="h6"
             color="blue-gray"
@@ -52,7 +52,7 @@ const Reservation = () => {
           />
         </div>
         {/* phone */}
-        <div className="lg:w-2/5 sm:w-80 sm:mx-auto lg:mx-3 my-3">
+        <div className="w-full sm:w-80 lg:w-2/5 sm:mx-auto lg:mx-3 my-3">
           <Typography
             variant="h6"
             color="blue-gray"
@@ -68,7 +68,7 @@ const Reservation = () => {
           />
         </div>
         {/* chairs number */}
-        <div className="lg:w-2/5 sm:w-80 sm:mx-auto lg:mx-3 my-3">
+        <div className="w-full sm:w-80 lg:w-2/5 sm:mx-auto lg:mx-3 my-3">
           <Typography
             variant="h6"
             color="blue-gray"
@@ -95,7 +95,7 @@ const Reservation = () => {
           </select>
         </div>
         {/* table number */}
-        <div className="lg:w-2/5 sm:w-80 sm:mx-auto lg:mx-3 my-3">
+        <div className="w-full sm:w-80 lg:w-2/5 sm:mx-auto lg:mx-3 my-3">
           <Typography
             variant="h6"
             color="blue-gray"
@@ -122,7 +122,7 @@ const Reservation = () => {
           </select>
         </div>
         {/* date */}
-        <div className="lg:w-2/5 sm:w-80 sm:mx-auto lg:mx-3 my-3">
+        <div className="w-full sm:w-80 lg:w-2/5 sm:mx-auto lg:mx-3 my-3">
           <Typography
             variant="h6"
             color="blue-gray"
@@ -138,7 +138,7 @@ const Reservation = () => {
           />
         </div>
         {/* time */}
-        <div className="lg:w-2/5 sm:w-80 sm:mx-auto lg:mx-3 my-3">
+        <div className="w-full sm:w-80 lg:w-2/5 sm:mx-auto lg:mx-3 my-3">
           <Typography
             variant="h6"
             color="blue-gray"
@@ -154,7 +154,7 @@ const Reservation = () => {
           />
         </div>
         {/* order details */}
-        <div className="lg:w-2/5 sm:w-80 sm:mx-auto lg:mx-3 my-3">
+        <div className="w-full sm:w-80 lg:w-2/5 sm:mx-auto lg:mx-3 my-3">
           <Typography
             variant="h6"
             color="blue-gray"
