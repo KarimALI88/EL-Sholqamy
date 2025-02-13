@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Navbar,
   Typography,
@@ -12,6 +12,7 @@ import { useTranslation } from "react-i18next";
 
 const TopNavBar = () => {
   const [openNav, setOpenNav] = React.useState(false);
+  const [scrolled,setScrolled] = useState(false)
   const { t, i18n } = useTranslation();
   const navigation = useNavigate();
 
@@ -75,8 +76,8 @@ const TopNavBar = () => {
   );
 
   return (
-    <div className=" max-h-[768px] w-[100%] pt-1 px-8 shadow-none bg-transparent blur-0">
-      <Navbar className="fixed right-0 left-0 top-0 z-10 h-max max-w-full rounded-none px-4 py-2 lg:px-8 lg:py-4 bg-transparent shadow-none border-none">
+    <div className={`max-h-[768px] w-[100%] pt-1 px-8 shadow-none ${scrolled ? "bg-[#f5f5f5]" : "bg-transparent"} blur-0`}>
+      <Navbar className=" z-10 h-max max-w-full rounded-none px-4 py-2 lg:px-8 lg:py-4 bg-transparent shadow-none border-none">
         <div className="flex items-center justify-between text-blue-gray-900">
           <div>
             <Typography as={Link} to="/" className="mr-4 cursor-pointer">

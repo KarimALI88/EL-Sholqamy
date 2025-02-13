@@ -11,6 +11,16 @@
   "contactHeaderTitle": "For any enquiries you can give us a call at 01000734004 Alternatively we can get in touch using the form bellow.",
   "menuHeaderTitle": "Discover the authentic taste of lamb made by the Master of grilled meat. A secret recipe adding horizons of deliciousness to every bite!",
   "galleryHeaderTitle": "An exquisite dining experience! Pay a visit, make a memory..Happy to share with you our latest moments!",
-  "titleOfGetLocation": "To get the nearest branch,, enter your current location"
-
+  "titleOfGetLocation": "To get the nearest branch,, enter your current location",
+  "bookHeaderTitle": "An exquisite dining experience! Pay a visit, make a memory..Happy to share with you our latest moments!",
+  "tabeleChairsNumberLabel": "Number of Chairs",
+  "tableNumberLabel" : "Table Number",
+  "dateLabel": "Reservation Date",
+  "timeLabel": "Reservation Time",
+  "userNameLabel": "Full Name",
+  "userPhoneLabel": "Phone",
+  "orderDetailsLabel": "Order Details(optional)",
+  "reservationTitle": "Reservation Online Booking",
+  "reservationDesc": "Fill the form below to book your table in Gamal Sholqamy Restaurant.",
+  "resSubmitButton": "book"
 }

@@ -1,3 +1,44 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+*{
+    padding:0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.reservation-input {
+    display: block;
+    margin: 0 auto 20px;
+    border: 1px solid gray;
+    padding: 5px;
+    width: 100%;
+    height:40px;
+}
+
+/* scroll bar */
+/* Width of the scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  
+  /* Track (the background of the scrollbar) */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+    border-radius: 5px;
+  }
+  
+  /* Handle (the moving part) */
+  ::-webkit-scrollbar-thumb {
+    background: #c46a28; 
+    border-radius: 5px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #c46928dc; 
+  }
+  
