@@ -56,6 +56,39 @@ const Footer = () => {
         {/* ===================================================================== */}
         <div className="lg:flex-1">
           <h6 className="text-mainColor text-xl font-semibold mb-5">
+            {t("footerLinkTitle3")}
+          </h6>
+          <ul>
+            <Link to={"/"}>
+              <li className="text-gray-600 font-medium cursor-pointer text-lg my-3 hover:text-mainColor">
+                {t("homeLink")}
+              </li>
+            </Link>
+            <Link to={"/about"}>
+              <li className="text-gray-600 font-medium cursor-pointer text-lg my-3 hover:text-mainColor">
+                {t("aboutLink")}
+              </li>
+            </Link>
+            <Link to={"/menu"}>
+              <li className="text-gray-600 font-medium cursor-pointer text-lg my-3 hover:text-mainColor">
+                {t("menuLink")}
+              </li>
+            </Link>
+            <Link to={"/gallery"}>
+              <li className="text-gray-600 font-medium cursor-pointer text-lg my-3 hover:text-mainColor">
+                {t("galleryLink")}
+              </li>
+            </Link>
+            <Link to={"/contact"}>
+              <li className="text-gray-600 font-medium cursor-pointer text-lg my-3 hover:text-mainColor">
+                {t("contactLink")}
+              </li>
+            </Link>
+          </ul>
+        </div>
+        {/* ===================================================================== */}
+        <div className="lg:flex-1">
+          <h6 className="text-mainColor text-xl font-semibold mb-5">
             {t("footerLinkTitle2")}
           </h6>
           <div className="flex flex-wrap gap-5 justify-start items-center">
@@ -95,9 +128,11 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <hr className="w-[90%] mx-auto my-5"/>
+      <hr className="w-[90%] mx-auto my-5" />
       <div className="mt-5">
-        <p className="text-lg font-normal text-gray-600 text-center">Powered By <Link className="text-mainColor">ZYNC</Link> 2025</p>
+        <p className="text-lg font-normal text-gray-600 text-center">
+          Powered By <Link className="text-mainColor">ZYNC</Link> 2025
+        </p>
       </div>
     </footer>
   );

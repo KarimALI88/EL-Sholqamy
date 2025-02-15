@@ -5,6 +5,7 @@ import AboutUsPart from '../components/AboutUsPart'
 import { useTranslation } from 'react-i18next'
 import lambBg from "../assets/menuBg.png"
 import OurValues2 from '../components/OurValues2'
+import DeliciousPart from '../components/DeliciousPart'
 
 const Home = () => {
   const {t} = useTranslation()
@@ -18,6 +19,7 @@ const Home = () => {
         <h4 className='text-4xl text-white my-3 font-bold'>{t("bestTitle2")}</h4>
       </div>
       <OurValues2 />
+      <DeliciousPart />
     </div>
   )
 }
