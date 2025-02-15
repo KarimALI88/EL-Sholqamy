@@ -1,6 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import routes from "./routes/routes";
 import Footer from "./components/Footer";
+import CartButton from "./components/CartButton";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
         ))}
       </Routes>
       <Footer />
+      <CartButton />
     </div>
   );
 }
