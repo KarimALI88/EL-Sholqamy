@@ -12,7 +12,7 @@ const MainHeader = ({title , image}) => {
       {/*content of header */}
       <div className='flex flex-col gap-5 justify-center items-center font-black text-white capitalize sm:w-[80%] lg:w-[70%] h-[90vh] mx-auto text-center mt-8'>
         <img src={owner} alt='logo' className='w-52 h-52' loading='lazy'/>
-        <h1 className='mt-8 text-[1.7rem]'>{t(title || "headerHomeTitle")}</h1>
+        <h1 className='mt-8 text-[1.7rem] px-2'>{t(title || "headerHomeTitle")}</h1>
       </div>
     </div>
   )

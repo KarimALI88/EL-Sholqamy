@@ -1,8 +1,7 @@
-import { Button } from "@material-tailwind/react";
 import { Route, Routes } from "react-router-dom";
 import routes from "./routes/routes";
-import MainHeader from "./components/MainHeader";
-
+// import Footer from "./components/Footer";
+// rgb(19 15 12)
 
 function App() {
   return (
@@ -12,6 +11,7 @@ function App() {
           <Route key={index} path={route.path} element={route.element} />
         ))}
       </Routes>
+      {/* <Footer /> */}
     </div>
   );
 }
