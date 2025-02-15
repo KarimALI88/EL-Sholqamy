@@ -173,8 +173,8 @@ const Reservation = () => {
         </div>
       </div>
       {/* submit button */}
-      <div className="sm:w-[70%] lg:w-[50%] mx-auto">
-        <button className="w-full bg-mainColor text-white p-2 my-3 font-semibold text-xl">{t("resSubmitButton")}</button>
+      <div className="sm:w-[70%] lg:w-[50%] mx-auto text-center">
+        <button className="w-72 mx-auto bg-mainColor text-white p-2 my-3 font-semibold text-xl">{t("resSubmitButton")}</button>
       </div>
     </div>
   );
