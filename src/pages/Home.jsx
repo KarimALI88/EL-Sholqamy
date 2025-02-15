@@ -4,7 +4,7 @@ import homeBg from "../assets/homebg.webp"
 import AboutUsPart from '../components/AboutUsPart'
 import { useTranslation } from 'react-i18next'
 import lambBg from "../assets/menuBg.png"
-import OurValues from '../components/OurValues'
+import OurValues2 from '../components/OurValues2'
 
 const Home = () => {
   const {t} = useTranslation()
@@ -17,7 +17,7 @@ const Home = () => {
         <h3 className='text-5xl text-mainColor my-3 font-black'>{t("bestTitle")}</h3>
         <h4 className='text-4xl text-white my-3 font-bold'>{t("bestTitle2")}</h4>
       </div>
-      <OurValues />
+      <OurValues2 />
     </div>
   )
 }

@@ -95,7 +95,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <hr className="w-[90%] mx-auto"/>
+      <hr className="w-[90%] mx-auto my-5"/>
       <div className="mt-5">
         <p className="text-lg font-normal text-gray-600 text-center">Powered By <Link className="text-mainColor">ZYNC</Link> 2025</p>
       </div>
