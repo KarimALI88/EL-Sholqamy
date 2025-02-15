@@ -18,7 +18,7 @@ const ContactUs = () => {
     <div>
       <MainHeader title={"contactHeaderTitle"} image={contactBg} />
       {/* Get In Touch */}
-      <div className="-mt-10 bg-[#130F0C] p-10 text-center">
+      <div className="-my-10 bg-[#130F0C] p-10 text-center">
         <div>
           <h2 className="text-5xl font-black p-2 text-mainColor">
             {t("contactTitle")}
