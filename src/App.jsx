@@ -1,7 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import routes from "./routes/routes";
-// import Footer from "./components/Footer";
-// rgb(19 15 12)
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -11,7 +10,7 @@ function App() {
           <Route key={index} path={route.path} element={route.element} />
         ))}
       </Routes>
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 }
