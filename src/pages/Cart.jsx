@@ -35,9 +35,9 @@ const Cart = () => {
       <TopNavBar specificPage={true} />
       <h1 className='text-4xl text-mainColor font-black my-5 text-center'>{t("cartTitle")}</h1>
       {/*cart items and total  */}
-      <div className="flex justify-center items-center gap-5 my-10 px-5 bg-[#fff] sm:flex-wrap lg:flex-nowrap">
+      <div className="flex flex-col lg:flex-row justify-center items-center gap-5 my-10 px-5 bg-[#fff]">
         {/* cart items */}
-        <div className="basis-2/3">
+        <div className="lg:basis-2/3">
           {cartItems.map((item, index) => (
             <Card
               className="w-full max-w-[40rem] flex-row my-6 shadow-lg rounded-lg border border-gray-200 hover:shadow-2xl transition-shadow duration-300 bg-[#f5f5f5]"
@@ -98,7 +98,7 @@ const Cart = () => {
         </div>
         {/* ====================================================== */}
         {/* total div */}
-        <div className="basis-1/3 w-full rounded-md bg-[#f5f5f5] shadow-lg p-5">
+        <div className="lg:basis-1/3 w-full rounded-md bg-[#f5f5f5] shadow-lg p-5">
           <div className="flex justify-between items-center">
             <h3 className="font-bold text-xl my-3">{t("totalTitle")}</h3>
             <h3 className="font-bold text-xl my-3 text-mainColor">500</h3>
