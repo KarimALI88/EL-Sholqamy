@@ -12,7 +12,7 @@ import { Link } from "react-router-dom";
 const Footer = () => {
   const { t } = useTranslation();
   return (
-    <footer class="w-full mt-10 bg-[#130F0C] p-10 ">
+    <footer className="w-full mt-10 bg-[#130F0C] p-10 ">
       <div className="flex flex-wrap justify-start items-start gap-10">
         <div className="lg:flex-1">
           <img src={logo} alt="logo" loading="lazy" className="w-24 h-24" />
