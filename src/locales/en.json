@@ -46,5 +46,8 @@
   "footerLinkTitle3": "Delicious Recipes",
   "deliciousPartTitle": "The most delicious recipes",
   "addToCart": "Add To Cart",
-  "readMore": "Read More"
+  "readMore": "Read More",
+  "totalTitle": "Total Price",
+  "pay": "payment",
+  "cartTitle": "Cart Items"
 }

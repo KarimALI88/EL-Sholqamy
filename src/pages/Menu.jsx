@@ -12,6 +12,7 @@ import {
 } from "@material-tailwind/react";
 import { MdOutlineRestaurantMenu } from "react-icons/md";
 import MapComponent from "../components/MapComponent";
+import ProductsComponent from "../components/ProductsComponent";
 
 const Menu = () => {
   const [userLocation, setUserLocation] = useState("");
@@ -24,8 +25,8 @@ const Menu = () => {
     },
     {
       label: <MdOutlineRestaurantMenu size={24} color="black" />,
-      content: "menu",
-      value: "menu",
+      content: <ProductsComponent />,
+      value: "menu", 
     },
   ]);
   const { t } = useTranslation();
@@ -120,7 +121,7 @@ const Menu = () => {
         </button>
       </div>
       {/* display menu based on branch */}
-      <div className="menuSection my-6 px-10 mx-auto lg:w-[70%] sm:w-full">
+      <div className="menuSection my-6 px-10 mx-auto lg:w-[90%] sm:w-full">
         <h4 className="text-xl my-3 font-extrabold">{nearestBranch?.name}</h4>
         <Tabs value="html">
           <TabsHeader>

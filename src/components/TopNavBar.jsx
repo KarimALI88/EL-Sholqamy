@@ -10,7 +10,7 @@ import { Link, useNavigate } from "react-router-dom";
 import logo from "../assets/logo.png";
 import { useTranslation } from "react-i18next";
 
-const TopNavBar = () => {
+const TopNavBar = ({specificPage=false}) => {
   const [openNav, setOpenNav] = React.useState(false);
   const [scrolled,setScrolled] = useState(false)
   const { t, i18n } = useTranslation();
@@ -37,7 +37,7 @@ const TopNavBar = () => {
         as="li"
         variant="small"
         color="blue-gray"
-        className="p-1 text-secondColor font-medium text-[1.2rem] hover:text-mainColor"
+        className="p-1 text-mainColor font-medium text-[1.2rem] hover:text-mainColor"
       >
         <Link to={"/"}>{t("homeLink")}</Link>
       </Typography>
@@ -45,7 +45,7 @@ const TopNavBar = () => {
         as="li"
         variant="small"
         color="blue-gray"
-        className="p-1 text-secondColor font-medium text-[1.2rem] hover:text-mainColor"
+        className="p-1 text-mainColor font-medium text-[1.2rem] hover:text-mainColor"
       >
         <Link to={"/about"}>{t("aboutLink")}</Link>
       </Typography>
@@ -53,7 +53,7 @@ const TopNavBar = () => {
         as="li"
         variant="small"
         color="blue-gray"
-        className="p-1 text-secondColor font-medium text-[1.2rem] hover:text-mainColor"
+        className="p-1 text-mainColor font-medium text-[1.2rem] hover:text-mainColor"
       >
         <Link to={"/menu"}>{t("menuLink")}</Link>
       </Typography>
@@ -61,7 +61,7 @@ const TopNavBar = () => {
         as="li"
         variant="small"
         color="blue-gray"
-        className="p-1 text-secondColor font-medium text-[1.2rem] hover:text-mainColor"
+        className="p-1 text-mainColor font-medium text-[1.2rem] hover:text-mainColor"
       >
         <Link to={"/gallery"}>{t("galleryLink")}</Link>
       </Typography>
@@ -69,7 +69,7 @@ const TopNavBar = () => {
         as="li"
         variant="small"
         color="blue-gray"
-        className="p-1 text-secondColor font-medium text-[1.2rem] hover:text-mainColor"
+        className="p-1 text-mainColor font-medium text-[1.2rem] hover:text-mainColor"
       >
         <Link to={"/contact"}>{t("contactLink")}</Link>
       </Typography>
@@ -77,7 +77,7 @@ const TopNavBar = () => {
   );
 
   return (
-    <div className={`max-h-[768px] w-[100%] pt-1 px-8 shadow-none ${scrolled ? "bg-[#f5f5f5]" : "bg-transparent"} blur-0`}>
+    <div className={`max-h-[768px] w-[100%] pt-1 px-8 shadow-none ${scrolled || specificPage === true ? "bg-[#F3F3F3] shadow-lg" : "bg-transparent"} blur-0`}>
       <Navbar className=" z-10 h-max max-w-full rounded-none px-4 py-2 lg:px-8 lg:py-4 bg-transparent shadow-none border-none">
         <div className="flex items-center justify-between text-blue-gray-900">
           <div>
@@ -117,7 +117,7 @@ const TopNavBar = () => {
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
-                  className="h-6 w-6 text-white"
+                  className="h-6 w-6 text-mainColor"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
                   strokeWidth={2}
@@ -131,7 +131,7 @@ const TopNavBar = () => {
               ) : (
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className="h-6 w-6 text-white"
+                  className="h-6 w-6 text-mainColor"
                   fill="none"
                   stroke="currentColor"
                   strokeWidth={2}
