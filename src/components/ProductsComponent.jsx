@@ -8,32 +8,34 @@ import {
   Button,
 } from "@material-tailwind/react";
 import { useTranslation } from "react-i18next";
+import { useSelector } from "react-redux";
 
 const ProductsComponent = () => {
   const { t } = useTranslation();
-  const [products, setProducts] = useState([
-    {
-      image:
-        "https://img.youm7.com/ArticleImgs/2022/9/29/69151-%D9%83%D9%81%D8%AA%D8%A9-%D8%A7%D9%84%D8%AD%D8%A7%D8%AA%D9%8A.jpg",
-      name: "كفتة",
-      price: "100.00",
-      description: "4 صوابع وطبق رز ",
-    },
-    {
-      image:
-        "https://i.ytimg.com/vi/ha06JmZUigQ/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLDgexEXrtshKiDbR6Qil4Mc2N_BgQ",
-      name: "كفتة",
-      price: "100.00",
-      description: "4 صوابع وطبق رز ",
-    },
-    {
-      image:
-        "https://img.youm7.com/ArticleImgs/2022/9/29/69151-%D9%83%D9%81%D8%AA%D8%A9-%D8%A7%D9%84%D8%AD%D8%A7%D8%AA%D9%8A.jpg",
-      name: "كفتة",
-      price: "100.00",
-      description: "4 صوابع وطبق رز ",
-    },
-  ]);
+  const products = useSelector((state) => state.products)
+  // const [products, setProducts] = useState([
+  //   {
+  //     image:
+  //       "https://img.youm7.com/ArticleImgs/2022/9/29/69151-%D9%83%D9%81%D8%AA%D8%A9-%D8%A7%D9%84%D8%AD%D8%A7%D8%AA%D9%8A.jpg",
+  //     name: "كفتة",
+  //     price: "100.00",
+  //     description: "4 صوابع وطبق رز ",
+  //   },
+  //   {
+  //     image:
+  //       "https://i.ytimg.com/vi/ha06JmZUigQ/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLDgexEXrtshKiDbR6Qil4Mc2N_BgQ",
+  //     name: "كفتة",
+  //     price: "100.00",
+  //     description: "4 صوابع وطبق رز ",
+  //   },
+  //   {
+  //     image:
+  //       "https://img.youm7.com/ArticleImgs/2022/9/29/69151-%D9%83%D9%81%D8%AA%D8%A9-%D8%A7%D9%84%D8%AD%D8%A7%D8%AA%D9%8A.jpg",
+  //     name: "كفتة",
+  //     price: "100.00",
+  //     description: "4 صوابع وطبق رز ",
+  //   },
+  // ]);
   return (
     <div className="flex justify-center items-center gap-5 my-5 flex-wrap">
       {products.map((product, index) => (
