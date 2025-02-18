@@ -8,6 +8,7 @@ import {
   Button,
 } from "@material-tailwind/react";
 import { useTranslation } from "react-i18next";
+import LoginComponent from "../components/LoginComponent";
 
 const Cart = () => {
   const [cartItems, setCartItems] = useState([
@@ -28,6 +29,7 @@ const Cart = () => {
       singlePrice: 100,
     },
   ]);
+  const [open, setOpen] = useState(false)
   const { t } = useTranslation();
 
   return (
@@ -107,10 +109,12 @@ const Cart = () => {
           <Button
             ripple={false}
             fullWidth={true}
+            onClick={() => setOpen(true)}
             className="bg-mainColor mt-5 text-white shadow-none hover:scale-105 hover:shadow-none focus:scale-105 focus:shadow-none active:scale-100"
           >
             {t("addToCart")}
           </Button>
+          <LoginComponent open={open} setOpen={setOpen}/>
         </div>
         {/* ====================================================== */}
       </div>
