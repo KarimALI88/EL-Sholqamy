@@ -46,10 +46,10 @@ const LoginComponent = ({ open, setOpen }) => {
             onClick={handleOpen}
             className="mr-1"
           >
-            <span>Cancel</span>
+            <span>{t("cancel")}</span>
           </Button>
           <Button className="bg-mainColor" onClick={handleOpen}>
-            <span>Confirm</span>
+            <span>{t("confirm")}</span>
           </Button>
         </DialogFooter>
       </Dialog>
