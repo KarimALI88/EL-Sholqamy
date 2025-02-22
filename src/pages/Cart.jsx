@@ -9,42 +9,55 @@ import {
 } from "@material-tailwind/react";
 import { useTranslation } from "react-i18next";
 import LoginComponent from "../components/LoginComponent";
+import { useDispatch, useSelector } from "react-redux";
+import { clearCart, removeFromCart } from "../redux/reducers/cartSlice";
+import { IoCloseSharp } from "react-icons/io5";
 
 const Cart = () => {
-  const [cartItems, setCartItems] = useState([
-    {
-      image:
-        "https://img.youm7.com/ArticleImgs/2022/9/29/69151-%D9%83%D9%81%D8%AA%D8%A9-%D8%A7%D9%84%D8%AD%D8%A7%D8%AA%D9%8A.jpg",
-      name: "كفتة",
-      description: "4 صوابع وطبق رز ",
-      quantity: 5,
-      singlePrice: 100,
-    },
-    {
-      image:
-        "https://img.youm7.com/ArticleImgs/2022/9/29/69151-%D9%83%D9%81%D8%AA%D8%A9-%D8%A7%D9%84%D8%AD%D8%A7%D8%AA%D9%8A.jpg",
-      name: "كفتة",
-      description: "4 صوابع وطبق رز ",
-      quantity: 5,
-      singlePrice: 100,
-    },
-  ]);
-  const [open, setOpen] = useState(false)
+  const [totalPrice, setTotalPrice] = useState(0)
+  const cartItems = useSelector((state) => state.cart.cart);
+  const [open, setOpen] = useState(false);
   const { t } = useTranslation();
+  const dispatch = useDispatch();
+
+  const handleRemoveFromCart = (id) => {
+    dispatch(removeFromCart(id));
+  };
+
+  const handleClearCart = () => {
+    dispatch(clearCart());
+  };
+
+  const calculateTotalPrice = () => {
+    const sum = 0 
+  }
 
   return (
     <div>
       <TopNavBar specificPage={true} />
-      <h1 className='text-4xl text-mainColor font-black my-5 text-center'>{t("cartTitle")}</h1>
+      <h1 className="text-4xl text-mainColor font-black my-5 text-center">
+        {t("cartTitle")}
+      </h1>
+      <div className="w-52 mx-5">
+        <Button
+          ripple={false}
+          fullWidth={true}
+          onClick={handleClearCart}
+          className="bg-mainColor mt-5 text-white shadow-none hover:scale-105 hover:shadow-none focus:scale-105 focus:shadow-none active:scale-100"
+        >
+          {t("clearCart")}
+        </Button>
+      </div>
       {/*cart items and total  */}
       <div className="flex flex-col lg:flex-row justify-center items-center gap-5 my-10 px-5 bg-[#fff]">
         {/* cart items */}
         <div className="lg:basis-2/3">
           {cartItems.map((item, index) => (
             <Card
-              className="w-full max-w-[40rem] flex-row my-6 shadow-lg rounded-lg border border-gray-200 hover:shadow-2xl transition-shadow duration-300 bg-[#f5f5f5]"
+              className="w-full relative max-w-[40rem] flex-row my-6 shadow-lg rounded-lg border border-gray-200 hover:shadow-2xl transition-shadow duration-300 bg-[#f5f5f5]"
               key={index}
             >
+              <IoCloseSharp className="absolute end-3 top-3 cursor-pointer" size={25} onClick={() => handleRemoveFromCart(item.name)}/>
               <CardHeader
                 shadow={false}
                 floated={false}
@@ -57,13 +70,15 @@ const Cart = () => {
                 />
               </CardHeader>
               <CardBody className="relative p-6">
-                <Typography
-                  variant="h6"
-                  color="gray"
-                  className="mb-2 uppercase tracking-wide text-gray-500"
-                >
-                  {item.name}
-                </Typography>
+                <div className="flex justify-between items-center">
+                  <Typography
+                    variant="h6"
+                    color="gray"
+                    className="mb-2 uppercase tracking-wide text-gray-500"
+                  >
+                    {item.name}
+                  </Typography>
+                </div>
                 <Typography
                   variant="h4"
                   color="blue-gray"
@@ -103,7 +118,7 @@ const Cart = () => {
         <div className="lg:basis-1/3 w-full rounded-md bg-[#f5f5f5] shadow-lg p-5">
           <div className="flex justify-between items-center">
             <h3 className="font-bold text-xl my-3">{t("totalTitle")}</h3>
-            <h3 className="font-bold text-xl my-3 text-mainColor">500</h3>
+            <h3 className="font-bold text-xl my-3 text-mainColor">{totalPrice}</h3>
           </div>
           <hr />
           <Button
@@ -112,9 +127,9 @@ const Cart = () => {
             onClick={() => setOpen(true)}
             className="bg-mainColor mt-5 text-white shadow-none hover:scale-105 hover:shadow-none focus:scale-105 focus:shadow-none active:scale-100"
           >
-            {t("addToCart")}
+            {t("pay")}
           </Button>
-          <LoginComponent open={open} setOpen={setOpen}/>
+          <LoginComponent open={open} setOpen={setOpen} />
         </div>
         {/* ====================================================== */}
       </div>

@@ -52,5 +52,6 @@
   "cartTitle": "Cart Items",
   "loginTitle": "order reciever phone number",
   "cancel": "cancel",
-  "confirm": "send"
+  "confirm": "send",
+  "clearCart":"clear cart"
 }
