@@ -10,12 +10,20 @@ import {
 import { useTranslation } from "react-i18next";
 import LoginComponent from "../components/LoginComponent";
 import { useDispatch, useSelector } from "react-redux";
-import { clearCart, removeFromCart } from "../redux/reducers/cartSlice";
+import {
+  clearCart,
+  decreaseQuantity,
+  increaseQuantity,
+  removeFromCart,
+} from "../redux/reducers/cartSlice";
 import { IoCloseSharp } from "react-icons/io5";
 
 const Cart = () => {
-  const [totalPrice, setTotalPrice] = useState(0)
   const cartItems = useSelector((state) => state.cart.cart);
+  const totalPrice = cartItems.reduce(
+    (acc, item) => acc + item.price * item.quantity,
+    0
+  );
   const [open, setOpen] = useState(false);
   const { t } = useTranslation();
   const dispatch = useDispatch();
@@ -28,9 +36,13 @@ const Cart = () => {
     dispatch(clearCart());
   };
 
-  const calculateTotalPrice = () => {
-    const sum = 0 
-  }
+  const handleIncrease = (id) => {
+    dispatch(increaseQuantity(id));
+  };
+
+  const handleDecrease = (id) => {
+    dispatch(decreaseQuantity(id));
+  };
 
   return (
     <div>
@@ -54,60 +66,86 @@ const Cart = () => {
         <div className="lg:basis-2/3">
           {cartItems.map((item, index) => (
             <Card
-              className="w-full relative max-w-[40rem] flex-row my-6 shadow-lg rounded-lg border border-gray-200 hover:shadow-2xl transition-shadow duration-300 bg-[#f5f5f5]"
+              className="relative flex flex-row w-full max-w-[40rem] bg-white shadow-md border border-gray-300 hover:shadow-lg transition-shadow duration-300 rounded-xl overflow-hidden my-3"
               key={index}
             >
-              <IoCloseSharp className="absolute end-3 top-3 cursor-pointer" size={25} onClick={() => handleRemoveFromCart(item.name)}/>
+              {/* Remove Button */}
+              <IoCloseSharp
+                className="absolute top-3 end-3 text-gray-600 hover:text-red-500 cursor-pointer transition-all"
+                size={22}
+                onClick={() => handleRemoveFromCart(item.id)}
+              />
+
+              {/* Image Section */}
               <CardHeader
                 shadow={false}
                 floated={false}
-                className="m-0 w-2/5 shrink-0 rounded-r-none overflow-hidden"
+                className="w-1/3 shrink-0 overflow-hidden"
               >
                 <img
                   src={item.image}
-                  alt="card-image"
+                  alt={item.name}
                   className="h-full w-full object-cover transition-transform duration-300 hover:scale-105"
                 />
               </CardHeader>
-              <CardBody className="relative p-6">
-                <div className="flex justify-between items-center">
+
+              {/* Card Details */}
+              <CardBody className="flex flex-col justify-between p-5 w-2/3">
+                <div>
+                  {/* Category */}
                   <Typography
-                    variant="h6"
+                    variant="small"
                     color="gray"
-                    className="mb-2 uppercase tracking-wide text-gray-500"
+                    className="uppercase text-gray-500 tracking-widest font-semibold"
+                  >
+                    {item.category}
+                  </Typography>
+
+                  {/* Item Name */}
+                  <Typography
+                    variant="h5"
+                    color="blue-gray"
+                    className="font-bold text-mainColor mt-1"
                   >
                     {item.name}
                   </Typography>
-                </div>
-                <Typography
-                  variant="h4"
-                  color="blue-gray"
-                  className="mb-10 font-semibold"
-                >
-                  {item.description}
-                </Typography>
-                <div className="absolute bottom-4 right-4 left-4 flex justify-between items-center w-[90%] mt-5 flex-wrap">
+
+                  {/* Price Calculation */}
                   <Typography
-                    variant="h4"
-                    className="text-lg font-bold text-mainColor"
+                    variant="h6"
+                    color="blue-gray"
+                    className="font-semibold text-gray-600 mt-2"
                   >
-                    {item.singlePrice}
+                    {item.price} x {item.quantity} ={" "}
+                    <span className="text-mainColor font-bold">
+                      {item.price * item.quantity}
+                    </span>
                   </Typography>
-                  <div className="flex gap-3 items-center">
-                    <button className="w-8 h-8 flex items-center justify-center bg-mainColor text-white rounded-md shadow-md hover:bg-opacity-80 transition">
-                      +
-                    </button>
-                    <Typography
-                      variant="h6"
-                      color="gray"
-                      className="text-lg font-semibold"
-                    >
-                      5
-                    </Typography>
-                    <button className="w-8 h-8 flex items-center justify-center bg-gray-300 text-gray-700 rounded-md shadow-md hover:bg-gray-400 transition">
-                      -
-                    </button>
-                  </div>
+                </div>
+
+                {/* Quantity Buttons */}
+                <div className="flex items-center gap-3 mt-4">
+                  <button
+                    onClick={() => handleIncrease(item.id)}
+                    className="w-8 h-8 flex items-center justify-center bg-mainColor text-white rounded-lg shadow-md hover:bg-opacity-80 transition transform active:scale-95"
+                  >
+                    +
+                  </button>
+
+                  <Typography
+                    variant="h6"
+                    color="gray"
+                    className="text-lg font-semibold"
+                  >
+                    {item.quantity}
+                  </Typography>
+
+                  <button
+                    onClick={() => handleDecrease(item.id)}
+                    className="w-8 h-8 flex items-center justify-center bg-gray-300 text-gray-700 rounded-lg shadow-md hover:bg-gray-400 transition transform active:scale-95"
+                  >
+                    -
+                  </button>
                 </div>
               </CardBody>
             </Card>
@@ -118,7 +156,9 @@ const Cart = () => {
         <div className="lg:basis-1/3 w-full rounded-md bg-[#f5f5f5] shadow-lg p-5">
           <div className="flex justify-between items-center">
             <h3 className="font-bold text-xl my-3">{t("totalTitle")}</h3>
-            <h3 className="font-bold text-xl my-3 text-mainColor">{totalPrice}</h3>
+            <h3 className="font-bold text-xl my-3 text-mainColor">
+              {totalPrice.toFixed(2)} {/* Ensure 2 decimal places */}{" "}
+            </h3>
           </div>
           <hr />
           <Button
