@@ -12,7 +12,7 @@ const Banners = () => {
 
   return (
     <Carousel
-      className=" w-3/4 mx-auto my-5 h-80"
+      className="sm:w-[20px] lg:w-3/4 mx-auto my-5 h-80"
       navigation={({ setActiveIndex, activeIndex, length }) => (
         <div className="absolute bottom-4 left-2/4 z-50 flex -translate-x-2/4 gap-2">
           {new Array(length).fill("").map((_, i) => (
