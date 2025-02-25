@@ -38,9 +38,9 @@ const Home = () => {
           {t("bestTitle2")}
         </h4>
       </div>
+      <OurBranches />
       <AboutUsPart />
       <OurValues2 />
-      <OurBranches />
     </div>
   );
 };
