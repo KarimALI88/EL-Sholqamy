@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import MainHeader from "../components/MainHeader";
-import menuBg from "../assets/menuBg.png";
+// import MainHeader from "../components/MainHeader";
+// import menuBg from "../assets/menuBg.png";
 import { useTranslation } from "react-i18next";
 import { FaLocationDot } from "react-icons/fa6";
 import {
@@ -13,6 +13,8 @@ import {
 import { MdOutlineRestaurantMenu } from "react-icons/md";
 import MapComponent from "../components/MapComponent";
 import ProductsComponent from "../components/ProductsComponent";
+import TopNavBar from "../components/TopNavBar";
+import Banners from "../components/Banners";
 
 const Menu = () => {
   const [userLocation, setUserLocation] = useState("");
@@ -108,7 +110,9 @@ const Menu = () => {
 
   return (
     <div>
-      <MainHeader title={"menuHeaderTitle"} image={menuBg} />
+      {/* <MainHeader title={"menuHeaderTitle"} image={menuBg} /> */}
+      <TopNavBar specificPage={true}/>
+      <Banners />
       <div className="my-5 mb-10 mx-auto px-5 flex flex-col gap-5 justify-center items-center">
         <h3 className="text-mainColor text-2xl font-semibold my-6">
           {t("titleOfGetLocation")}

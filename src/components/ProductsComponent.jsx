@@ -41,7 +41,7 @@ const ProductsComponent = () => {
       {/* products */}
       <div className="flex justify-center items-center gap-5 my-5 flex-wrap">
         {products.map((product, index) => (
-          <Card className="w-80" key={index}>
+          <Card className="w-80 bg-[#f5f5f5]" key={index}>
             <CardHeader shadow={false} floated={false} className="h-52">
               <img
                 src={product.image}

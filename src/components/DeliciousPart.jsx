@@ -33,13 +33,13 @@ const DeliciousPart = () => {
     },
   ]);
   return (
-    <div className="p-10 text-center">
+    <div className="p-10 text-center ">
       <h2 className="font-semibold text-mainColor text-5xl my-3">
         {t("deliciousPartTitle")}
       </h2>
       <div className="mx-auto flex flex-wrap justify-center items-center gap-5 my-5">
         {deliciousRecipes.map((recipe, index) => (
-          <Card className="w-96" key={index}>
+          <Card className="w-96 bg-[#f5f5f5]" key={index}>
             <CardHeader shadow={false} floated={false} className="h-52">
               <img
                 src={recipe.image}
