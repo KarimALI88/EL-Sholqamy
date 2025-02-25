@@ -36,7 +36,7 @@ const TopNavBar = ({ specificPage }) => {
         as="li"
         variant="small"
         color="blue-gray"
-        className="p-2 text-mainColor font-medium text-[1.2rem] hover:bg-mainColor hover:text-white"
+        className="p-2 text-mainColor font-semibold text-[1rem] hover:bg-mainColor hover:text-white duration-700"
       >
         <Link to={"/"}>{t("homeLink")}</Link>
       </Typography>
@@ -44,7 +44,7 @@ const TopNavBar = ({ specificPage }) => {
         as="li"
         variant="small"
         color="blue-gray"
-        className="p-2 text-mainColor font-medium text-[1.2rem] hover:bg-mainColor hover:text-white"
+        className="p-2 text-mainColor font-semibold text-[1rem] hover:bg-mainColor hover:text-white duration-700"
       >
         <Link to={"/about"}>{t("aboutLink")}</Link>
       </Typography>
@@ -52,7 +52,7 @@ const TopNavBar = ({ specificPage }) => {
         as="li"
         variant="small"
         color="blue-gray"
-        className="p-2 text-mainColor font-medium text-[1.2rem] hover:bg-mainColor hover:text-white"
+        className="p-2 text-mainColor font-semibold text-[1rem] hover:bg-mainColor hover:text-white duration-700"
       >
         <Link to={"/menu"}>{t("menuLink")}</Link>
       </Typography>
@@ -60,7 +60,7 @@ const TopNavBar = ({ specificPage }) => {
         as="li"
         variant="small"
         color="blue-gray"
-        className="p-2 text-mainColor font-medium text-[1.2rem] hover:bg-mainColor hover:text-white"
+        className="p-2 text-mainColor font-semibold text-[1rem] hover:bg-mainColor hover:text-white duration-700"
       >
         <Link to={"/gallery"}>{t("galleryLink")}</Link>
       </Typography>
@@ -68,7 +68,7 @@ const TopNavBar = ({ specificPage }) => {
         as="li"
         variant="small"
         color="blue-gray"
-        className="p-2 text-mainColor font-medium text-[1.2rem] hover:bg-mainColor hover:text-white"
+        className="p-2 text-mainColor font-semibold text-[1rem] hover:bg-mainColor hover:text-white duration-700"
       >
         <Link to={"/contact"}>{t("contactLink")}</Link>
       </Typography>

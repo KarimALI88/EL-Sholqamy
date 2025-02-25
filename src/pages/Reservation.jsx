@@ -6,6 +6,7 @@ import { Worker, Viewer } from "@react-pdf-viewer/core";
 import "@react-pdf-viewer/core/lib/styles/index.css";
 import { Typography } from "@material-tailwind/react";
 import { useTranslation } from "react-i18next";
+import tables from '../assets/tables.jpg';
 
 const Reservation = () => {
   const [userName, setUserName] = useState("");
@@ -20,18 +21,21 @@ const Reservation = () => {
     <div>
       <MainHeader title={"bookHeaderTitle"} image={bookBg} />
       <div className="text-center">
-        <h2 className="text-mainColor font-bold text-[2rem]">{t("reservationTitle")}</h2>
+        <h2 className="text-mainColor font-bold text-[2rem]">
+          {t("reservationTitle")}
+        </h2>
         <h6 className="text-gray-600">{t("reservationDesc")}</h6>
       </div>
       {/* tables pdf */}
-      <div className="px-10 w-full h-96 my-5">
-        <div onContextMenu={(e) => e.preventDefault()} className="h-96">
+      <div className="px-10 w-[90%] mx-auto h-[500px] my-5">
+        <img src={tables} alt="tables image" className="w-full h-full"/>
+        {/* <div onContextMenu={(e) => e.preventDefault()} className="h-96">
           <Worker
             workerUrl={`https://unpkg.com/pdfjs-dist@3.11.174/build/pdf.worker.min.js`}
           >
             <Viewer fileUrl={tablesPdf} />
           </Worker>
-        </div>
+        </div> */}
       </div>
       {/* inputs */}
       <div className="px-6 w-full my-5 flex justify-center items-center flex-wrap">
@@ -174,7 +178,9 @@ const Reservation = () => {
       </div>
       {/* submit button */}
       <div className="sm:w-[70%] lg:w-[50%] mx-auto text-center">
-        <button className="w-72 mx-auto bg-mainColor text-white p-2 my-3 font-semibold text-xl">{t("resSubmitButton")}</button>
+        <button className="w-72 mx-auto bg-mainColor text-white p-2 my-3 font-semibold text-xl">
+          {t("resSubmitButton")}
+        </button>
       </div>
     </div>
   );

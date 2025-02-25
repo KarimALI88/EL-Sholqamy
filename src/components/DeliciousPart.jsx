@@ -34,7 +34,7 @@ const DeliciousPart = () => {
   ]);
   return (
     <div className="p-10 text-center ">
-      <h2 className="font-semibold text-mainColor text-5xl my-3">
+      <h2 className="font-bold text-mainColor text-3xl my-3">
         {t("deliciousPartTitle")}
       </h2>
       <div className="mx-auto flex flex-wrap justify-center items-center gap-5 my-5">

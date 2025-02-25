@@ -203,6 +203,7 @@ const Cart = () => {
             ripple={false}
             fullWidth={true}
             onClick={() => setOpen(true)}
+            disabled={totalPrice == 0}
             className="bg-mainColor mt-5 text-white shadow-none hover:scale-105 hover:shadow-none focus:scale-105 focus:shadow-none active:scale-100"
           >
             {t("pay")}
