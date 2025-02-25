@@ -61,5 +61,7 @@
   "alertConfirm": "نعم",
   "ok": "انهاء",
   "deleted": "تم المسح",
-  "ourBranches": "فروعنا"
+  "ourBranches": "فروعنا",
+  "octoberBranch": "فرع اكتوبر",
+  "gizaBranch": "فرع الجيزة"
 }

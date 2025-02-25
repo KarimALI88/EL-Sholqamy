@@ -134,7 +134,7 @@ const TopNavBar = ({ specificPage }) => {
                   changeLanguage(i18n.language == "ar" ? "en" : "ar")
                 }
                 size="md"
-                className="hidden lg:inline-block bg-transparent border-mainColor text-mainColor border-2 hover:bg-mainColor hover:text-white rounded-none"
+                className="hidden lg:inline-block bg-transparent border-mainColor text-mainColor  hover:bg-mainColor hover:text-white rounded-none"
               >
                 <span>{t("changeLang")}</span>
               </Button>

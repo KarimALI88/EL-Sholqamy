@@ -61,5 +61,7 @@
   "alertConfirm": "Yes",
   "ok":"ok",
   "deleted": "Deleted",
-  "ourBranches": "Our Branches"
+  "ourBranches": "Our Branches",
+  "octoberBranch": "October Branch",
+  "gizaBranch": "Giza Branch"
 }
