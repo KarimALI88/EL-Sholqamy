@@ -9,6 +9,7 @@ import DeliciousPart from "../components/DeliciousPart";
 import TopNavBar from "../components/TopNavBar";
 import Banners from "../components/Banners";
 import Filteration from "../components/Filteration";
+import OurBranches from "../components/OurBranches";
 
 const Home = () => {
   const { t } = useTranslation();
@@ -39,6 +40,7 @@ const Home = () => {
       </div>
       <AboutUsPart />
       <OurValues2 />
+      <OurBranches />
     </div>
   );
 };
