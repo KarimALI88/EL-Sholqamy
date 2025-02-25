@@ -17,6 +17,7 @@ import {
   removeFromCart,
 } from "../redux/reducers/cartSlice";
 import { IoCloseSharp } from "react-icons/io5";
+import Swal from "sweetalert2";
 
 const Cart = () => {
   const cartItems = useSelector((state) => state.cart.cart);
@@ -29,11 +30,48 @@ const Cart = () => {
   const dispatch = useDispatch();
 
   const handleRemoveFromCart = (id) => {
-    dispatch(removeFromCart(id));
+    Swal.fire({
+      title: t("alertTitle"),
+      text: t("alertDesc2"),
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: t("alertConfirm"),
+      cancelButtonText: t("cancel")
+    }).then((result) => {
+      if (result.isConfirmed) {
+        dispatch(removeFromCart(id));
+        Swal.fire({
+          icon: "success",
+          title: t("deleted"),
+          confirmButtonText: t("ok")
+        });
+      }
+    });
+    
   };
 
   const handleClearCart = () => {
-    dispatch(clearCart());
+    Swal.fire({
+      title: t("alertTitle"),
+      text: t("alertDesc"),
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: t("alertConfirm"),
+      cancelButtonText: t("cancel")
+    }).then((result) => {
+      if (result.isConfirmed) {
+        dispatch(clearCart());
+        Swal.fire({
+          icon: "success",
+          title: t("deleted"),
+          confirmButtonText: t("ok")
+        });
+      }
+    });
   };
 
   const handleIncrease = (id) => {

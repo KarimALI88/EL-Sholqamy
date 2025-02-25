@@ -53,6 +53,12 @@
   "loginTitle": "order reciever phone number",
   "cancel": "cancel",
   "confirm": "send",
-  "clearCart":"clear cart",
-  "search": "search"
+  "clearCart": "clear cart",
+  "search": "search",
+  "alertTitle": "Are you sure?",
+  "alertDesc": "You will delete cart items",
+  "alertDesc2": "You will delete this item from cart",
+  "alertConfirm": "Yes",
+  "ok":"ok",
+  "deleted": "Deleted"
 }
