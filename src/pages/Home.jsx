@@ -8,6 +8,7 @@ import OurValues2 from "../components/OurValues2";
 import DeliciousPart from "../components/DeliciousPart";
 import TopNavBar from "../components/TopNavBar";
 import Banners from "../components/Banners";
+import Filteration from "../components/Filteration";
 
 const Home = () => {
   const { t } = useTranslation();
@@ -16,6 +17,7 @@ const Home = () => {
     <div className="home-page">
       {/* <MainHeader title={"headerHomeTitle"} image={homeBg}/> */}
       <TopNavBar specificPage={true} />
+      <Filteration />
       <Banners />
       <DeliciousPart />
       <div

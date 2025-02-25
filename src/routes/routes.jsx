@@ -14,6 +14,7 @@ const routes = [
     { path: "/", element: <Home /> },
     { path: "/about", element: <AboutUs /> },
     { path: "/menu", element: <Menu /> },
+    { path: "/menu/:category", element: <Menu /> },
     { path: "/gallery", element: <Gallery /> },
     { path: "/reservation", element: <Reservation /> },
     { path: "/contact", element: <ContactUs /> },

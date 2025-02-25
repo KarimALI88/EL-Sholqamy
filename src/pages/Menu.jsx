@@ -15,6 +15,7 @@ import MapComponent from "../components/MapComponent";
 import ProductsComponent from "../components/ProductsComponent";
 import TopNavBar from "../components/TopNavBar";
 import Banners from "../components/Banners";
+import Filteration from "../components/Filteration";
 
 const Menu = () => {
   const [userLocation, setUserLocation] = useState("");
@@ -112,6 +113,7 @@ const Menu = () => {
     <div>
       {/* <MainHeader title={"menuHeaderTitle"} image={menuBg} /> */}
       <TopNavBar specificPage={true}/>
+      <Filteration />
       <Banners />
       <div className="my-5 mb-10 mx-auto px-5 flex flex-col gap-5 justify-center items-center">
         <h3 className="text-mainColor text-2xl font-semibold my-6">
