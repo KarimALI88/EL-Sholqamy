@@ -13,7 +13,7 @@ const OurBranches = () => {
       <h2 className="font-bold text-mainColor text-3xl my-2 text-center">
         {t("ourBranches")}
       </h2>
-      <div className="p-11 my-2 flex justify-center items-center gap-5">
+      <div className="p-11 my-2 flex justify-center items-center gap-5 sm:flex-wrap lg:flex-wrap">
         <div className="flex-1">
           <figure className="relative h-96 w-full">
             <img
