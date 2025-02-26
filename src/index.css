@@ -6,6 +6,8 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: "Noto Sans Arabic", serif !important;
+  font-optical-sizing: auto !important;
 }
 
 .reservation-input {
