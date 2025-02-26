@@ -11,14 +11,18 @@ import {
   FaTiktok,
   FaYoutube,
 } from "react-icons/fa";
+import TopNavBar from "../components/TopNavBar";
+import Filteration from "../components/Filteration";
 
 const ContactUs = () => {
   const { t } = useTranslation();
   return (
     <div>
-      <MainHeader title={"contactHeaderTitle"} image={contactBg} />
+      {/* <MainHeader title={"contactHeaderTitle"} image={contactBg} /> */}
+      <TopNavBar specificPage={true} />
+      <Filteration />
       {/* Get In Touch */}
-      <div className="-my-10 bg-[#130F0C] p-10 text-center">
+      <div className="-my-1 bg-[#130F0C] p-10 text-center">
         <div>
           <h2 className="text-5xl font-black p-2 text-mainColor">
             {t("contactTitle")}

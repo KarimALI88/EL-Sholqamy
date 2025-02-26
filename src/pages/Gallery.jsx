@@ -3,6 +3,8 @@ import MainHeader from "../components/MainHeader";
 import galleryBg from "../assets/galleryBg.jpeg";
 import { t } from "i18next";
 import { useTranslation } from "react-i18next";
+import Filteration from "../components/Filteration";
+import TopNavBar from "../components/TopNavBar";
 
 const Gallery = () => {
   const { t } = useTranslation();
@@ -34,7 +36,9 @@ const Gallery = () => {
   );
   return (
     <div>
-      <MainHeader title={"galleryHeaderTitle"} image={galleryBg} />
+      {/* <MainHeader title={"galleryHeaderTitle"} image={galleryBg} /> */}
+      <TopNavBar specificPage={true} />
+      <Filteration />
       <div className="mx-auto my-10 text-center">
         <h2 className="text-mainColor font-black text-4xl my-3">
           {t("galleryTitle")}

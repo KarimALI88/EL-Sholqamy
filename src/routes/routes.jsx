@@ -7,6 +7,7 @@ const ContactUs = lazy(() => import("../pages/ContactUs"));
 const Reservation = lazy(() => import("../pages/Reservation"));
 const Gallery = lazy(() => import("../pages/Gallery"));
 const Cart = lazy(() => import("../pages/Cart"));
+const SingleProduct = lazy(() => import("../pages/SingleProduct"));
 
 
 
@@ -19,6 +20,7 @@ const routes = [
     { path: "/reservation", element: <Reservation /> },
     { path: "/contact", element: <ContactUs /> },
     { path: "/cart", element: <Cart /> },
+    { path: "/product/:id", element: <SingleProduct /> },
 ];
 
 export default routes;

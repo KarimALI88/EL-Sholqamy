@@ -10,13 +10,13 @@ import {
 import { useTranslation } from "react-i18next";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "../redux/reducers/cartSlice";
+import { useNavigate } from "react-router-dom";
 
 const ProductsComponent = () => {
-  const [selectedCategory, setSelectedCategory] = useState("");
   const { t } = useTranslation();
   const products = useSelector((state) => state.products.products);
-  const categories = ["مشويات", "صواني", "ني", "عزومات"];
   const dispatch = useDispatch();
+  const navigate = useNavigate()
 
   const handleAddToCart = (product) => {
     dispatch(addToCart(product));
@@ -24,24 +24,10 @@ const ProductsComponent = () => {
 
   return (
     <div>
-      {/* filteration */}
-      <div className="flex justify-center items-center gap-5 my-5 flex-wrap">
-        {categories.map((cat, index) => (
-          <button
-            key={index}
-            onClick={() => setSelectedCategory(cat)}
-            className={`${
-              selectedCategory == cat ? "bg-secondColor" : "bg-gray-300"
-            } font-medium text-lg py-2 px-8 text-black rounded-xl shadow-md`}
-          >
-            {cat}
-          </button>
-        ))}
-      </div>
       {/* products */}
       <div className="flex justify-center items-center gap-5 my-5 flex-wrap">
         {products.map((product, index) => (
-          <Card className="w-80 bg-[#f5f5f5]" key={index}>
+          <Card className="w-80 bg-[#f5f5f5] cursor-pointer" key={index} onClick={() => navigate(`/product/${product.id}`)} >
             <CardHeader shadow={false} floated={false} className="h-52">
               <img
                 src={product.image}
